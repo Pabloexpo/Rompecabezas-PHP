@@ -101,8 +101,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         
 //        Ahora tenemos que comprobar que el array esté ordenado
         $ordenado = compruebaArray($arrayFinal); 
+        echo $ordenado;
+//        Tendremos un booleano que nos dirá si el array está ordenado o no
         
-
 //        mostramos como tabla
         echo "<table border='1'>";
 
@@ -118,13 +119,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                     echo "<td>$valorElegido</td>";
                 //TODAS ESTAS POSICIONES VAN DESDE LA POSICION QUE TENGAMOS ACTUALMENTE 
                 } else if (($i == ($posI + 1)) && ($j == $posJ)) { //posicion 1,0
-                    echo "<td><button type='submit' value='$i$j' $ordenado? 'disabled': '' name='valor' style='background-color:red'>$valor</button></td>";
+                    echo "<td><button type='submit' value='$i$j' " . ($ordenado ? "disabled" : "") . " name='valor' style='background-color:red'>$valor</button></td>";
                 } else if (($i == ($posI - 1)) && ($j == $posJ)) { //posicion -1,0
-                    echo "<td><button type='submit' value='$i$j' $ordenado? 'disabled': '' name='valor' style='background-color:red'>$valor</button></td>";
+                    echo "<td><button type='submit' value='$i$j' " . ($ordenado ? "disabled" : "") . " name='valor' style='background-color:red'>$valor</button></td>";
                 } else if (($i == $posI) && ($j == ($posJ - 1))) { //posicion 0. -1
-                    echo "<td><button type='submit' value='$i$j' $ordenado? 'disabled': '' name='valor' style='background-color:red'>$valor</button></td>";
+                    echo "<td><button type='submit' value='$i$j' " . ($ordenado ? "disabled" : "") . " name='valor' style='background-color:red'>$valor</button></td>";
                 } else if (($i == $posI) && ($j == ($posJ + 1))) { //posicion 0,1
-                    echo "<td><button type='submit' value='$i$j' $ordenado? 'disabled': '' name='valor' style='background-color:red'>$valor</button></td>";
+                    echo "<td><button type='submit' value='$i$j' " . ($ordenado ? "disabled" : "") . " name='valor' style='background-color:red'>$valor</button></td>";
                 } else {
                     echo "<td><button type='submit' value='$i$j' name='valor' disabled>$valor</button></td>";
                 }
